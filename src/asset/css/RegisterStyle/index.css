@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@200;300;400;600;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif !important;
+}
+
+.Container {
+  background: #2f2e41;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Container .Content {
+  position: relative;
+  overflow: hidden;
+  width: 600px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  grid-template-areas: "image form";
+  gap: 50px;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 600px) {
+  .Container .Content {
+    width: 450px;
+    grid-template-areas: "image" "form";
+    justify-content: center;
+    grid-template-columns: 0.9fr;
+  }
+}
+
+.Container .Content:after {
+  position: absolute;
+  border-radius: 50%;
+  left: -30px;
+  top: -30px;
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: #6c63ff;
+}
+
+.Container .Content:before {
+  content: "";
+  background: #2f2e41;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 80px;
+  z-index: 1;
+}
+
+.Container .Content .imgThumbnail {
+  grid-area: image;
+  margin: auto;
+}
+
+.Container .Content .imgThumbnail img {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .Container .Content .imgThumbnail {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .Container .Content .imgThumbnail {
+    display: none;
+  }
+}
+
+.Container .Content .form {
+  grid-area: form;
+}
+
+.Container .Content .form .header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .Container .Content .form .header {
+    margin-top: -40px;
+  }
+}
+
+.Container .Content .form .header .title {
+  font-size: 30px;
+  color: #2f2e41;
+  font-family: "Bebas Neue", cursive;
+}
+
+.Container .Content .form .header .title:after {
+  display: block;
+  margin: 5px auto;
+  border-radius: 4px;
+  content: "";
+  width: 40px;
+  height: 3px;
+  background: #2f2e41;
+}
+
+.Container .Content .form .header p {
+  margin: 5px;
+}
+
+.Container .Content .form .success {
+  margin: auto;
+  border: 1px solid #007000;
+  width: 90%;
+  padding: 6px;
+  border-radius: 20px;
+}
+
+.Container .Content .form .success p {
+  text-align: center;
+  color: #007000;
+  font-weight: 600;
+}
+
+.Container .Content .form form .formGroup {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Container .Content .form form .formGroup label {
+  font-size: 15px;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.Container .Content .form form .formGroup .danger {
+  border: 1px solid red;
+}
+
+.Container .Content .form form .formGroup .danger:focus {
+  border: 1px solid red;
+  box-shadow: 0 0 2px 1px red;
+}
+
+.Container .Content .form form .formGroup input {
+  padding: 8px 12px;
+  outline: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  color: grey;
+  border: 1px solid grey;
+  margin-top: 8px;
+}
+
+.Container .Content .form form .formGroup input:focus {
+  border: 1px solid #6c63ff;
+  box-shadow: 0 0 2px 1px #6c63ff;
+}
+
+.Container .Content .form form .formGroup small {
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 12px;
+  color: red;
+  font-weight: 600;
+}
+
+.Container .Content .form form .button {
+  float: right;
+}
+
+.Container .Content .form form .button .loading {
+  cursor: not-allowed;
+}
+
+.Container .Content .form form .button .loading:focus {
+  box-shadow: none;
+}
+
+.Container .Content .form form .button .loading:hover {
+  color: white;
+  background: #847dff;
+}
+
+.Container .Content .form form .button button {
+  padding: 8px 20px;
+  outline: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  color: white;
+  border: 1px solid #6c63ff;
+  font-family: "Nunito", sans-serif;
+  margin-right: 15px;
+  background: #6c63ff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .Container .Content .form form .button button {
+    width: 120px;
+  }
+}
+
+.Container .Content .form form .button button:hover {
+  color: #6c63ff;
+  background: transparent;
+}
+
+.Container .Content .form form .button button:focus {
+  box-shadow: 0 0 5px 1px #6c63ff;
+}
+
+.Container .Content .form .hrefLogin {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 70px;
+}
+
+.Container .Content .form .hrefLogin a {
+  margin-left: 4px;
+  text-decoration: none;
+  color: #6c63ff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.Container .Content .form .hrefLogin a:hover {
+  color: #9c96ff;
+}

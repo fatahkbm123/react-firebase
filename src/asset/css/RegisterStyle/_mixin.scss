@@ -1,0 +1,25 @@
+@mixin formElement($padding, $color, $borderColor) {
+  padding: 8px $padding;
+  outline: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  color: $color;
+  border: 1px solid $borderColor;
+}
+
+@mixin afterELement($background, $tipe, $width, $height) {
+  @if ($tipe) {
+    position: absolute;
+    border-radius: 50%;
+    left: -30px;
+    top: -30px;
+  } @else {
+    display: block;
+    margin: 5px auto;
+    border-radius: 4px;
+  }
+  content: "";
+  width: $width;
+  height: $height;
+  background: $background;
+}
